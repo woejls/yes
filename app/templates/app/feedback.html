@@ -1,0 +1,31 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+<br /><h2>Здесь вы можете отправить нам отзыв</h2>
+<div>
+    <form method="post">
+    {% csrf_token %}
+    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+    {{ form.name }}<br /><br />
+    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+    {{ form.email }}<br /><br />
+    <label for="{{ form.visits.id_for_label }}">{{ form.visits.label }}:</label>
+    {{ form.visits }}<br /><br />
+    <label for="{{ form.agree.id_for_label }}">{{ form.agree.label }}:</label>
+    {{ form.agree }}<br /><br />
+    <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+    {{ form.message }}<br /><br />
+    <input type="submit" value="Отправить" />
+    </form>
+</div>
+{%  else %}
+<br /><h2>Спасибо за ваш отзыв, ваше мнение очень не важно для нас</h2>
+    <ul>
+        <li><span>Имя:</span>{{ data.name }}</li>
+        <li><span>Ваш email:</span>{{ data.email }}</li>
+        <li><span>Согласие на обработку персональных данных:</span>{{ data.agree }}</li>
+        <li><span>Выбрали ответ:</span>{{ data.visits }}</li>
+        <li><span>Ваш отзыв:</span>{{ data.message }}</li>
+    </ul>
+{% endif %}
+{% endblock %}
