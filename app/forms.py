@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from .models import Comment
 from .models import Blog
+from .models import Orders
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     username = forms.CharField(max_length=254,
@@ -41,3 +42,9 @@ class BlogForm(forms.ModelForm):
         model = Blog
         fields = {'title', 'description', 'content', 'image',}
         labels = {'title':"Заголовок", 'discription':"Краткое содержание", 'content':"Полное содержание", 'image':"Картинка"}
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Orders
+        fields = {'fio', 'email', 'phone', 'date', 'sum', 'tickets'}
+        labels = {'fio':"ФИО", 'email':"e-mail", 'phone':"телефон", 'date':"дата", 'sum':"сумма к оплате"}

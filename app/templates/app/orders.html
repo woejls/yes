@@ -1,0 +1,19 @@
+{% extends "app/layout.html" %}
+{% block content %}
+
+
+<h3 style="font-style: italic;">Заказы</h3>
+
+{% for order in orders %}
+<div class="order" style="margin: 10px; border: 1px solid green;">
+<p class="orderText">{{order.clientFio}}</p>
+<p class="orderText">{{order.orderEmail}}</p>
+<p class="orderText">{{order.orderSum}}</p>
+<p class="orderText">{{order.orderPhone}}</p>
+<p class="orderText">{{order.orderDate}}</p>
+<p class="orderText">{{order.orderTickets}}</p>
+</div>
+{% endfor %}
+
+
+{% endblock %}

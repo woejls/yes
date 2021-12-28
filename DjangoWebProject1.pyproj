@@ -56,14 +56,21 @@
     <Folder Include="DjangoWebProject1\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\static\app\content\style.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\static\app\scripts\tickets.js" />
     <Content Include="app\templates\app\blog.html" />
     <Content Include="app\templates\app\blogpost.html" />
     <Content Include="app\templates\app\feedback.html" />
     <Content Include="app\templates\app\newpost.html" />
+    <Content Include="app\templates\app\orders.html" />
     <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\tikets.html" />
     <Content Include="app\templates\app\videopost.html" />
-    <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="requirements.txt" />
+    <Content Include="bds.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
     <Content Include="app\static\app\content\site.css" />

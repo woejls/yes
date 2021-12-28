@@ -2,24 +2,24 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Музей оружия</h1>
-    <p class="lead">Мы представляем для вас историю.</p>
+<div class="jumbotron" style="background-color:blanchedalmond;">
+    <h1 style=" font-style:italic; font-size:3em;">Музей оружия</h1>
+    <p class="lead" style=" font-style:italic; font-size:1em;">Мы представляем для вас историю.</p>
     <p><a href="{% url 'blog' %}" class="btn btn-primary btn-large">узнать больше &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Мы знакомим с историей</h2>
-        <p>
+        <h2 style=" font-style:italic; font-size:2em;">Мы знакомим с историей</h2>
+        <p style=" font-style:italic; font-size:1em;">
             Собрание музея оружия дает возможность познакомиться не только с историей стрелкового и холодного оружия, но и с некоторыми технологическими особенностями его производства в ХVIII–ХХ веках.
             Сегодня музей оружия располагает ценнейшим собранием огнестрельного и холодного оружия как отечественного, так и зарубежного производства. Особую ценность ему придают многочисленные опытные модели, малоизвестные не только любителям, но и специалистам. Уникальность музея обусловлена тем, что он предоставляет возможность проследить основные этапы эволюции стрелкового оружия.
         </p>
         <p><a class="btn btn-default" href="{% url 'blog' %}">узнать больше &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Научная деятельность</h2>
-        <p> Основным направлением научной деятельности музея является изучение музейных предметов и коллекций. Такие исследования — начальная ступень работы по созданию постоянных экспозиций и временных выставок.
+        <h2 style=" font-style:italic; font-size:2em;">Научная деятельность</h2>
+        <p style=" font-style:italic; font-size:1em;"> Основным направлением научной деятельности музея является изучение музейных предметов и коллекций. Такие исследования — начальная ступень работы по созданию постоянных экспозиций и временных выставок.
             Сведения, полученные в результате проводимых исследований в области истории оружия, его разработки и производства, позволяют представить оружие не только как предмет истории техники, но и рассматривать процесс его совершенствования как органичную часть цивилизационного процесса.
 
             Сотрудники музея проводят научные исследования как на базе документов тульских архивов, так и архивов других городов, среди которых ведущее место занимают Российский государственный архив древних актов, Государственный архив Российской Федерации, Российский государственный военно-исторический архив, Архив Санкт-Петербургского института истории Российской академии наук, Центральный государственный исторический архив Санкт-Петербурга, Российский Архив Военно-исторического музея артиллерии, инженерных войск и войск связи.
@@ -28,52 +28,31 @@
         <p><a class="btn btn-default" href="{% url 'blog' %}">узнать больше &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Молодежь</h2>
-        <p>Для молодёжи разработаны уникальные программы, включающие мастер-классы известных деятелей культуры и искусства, циклы лекций по истории и теории искусства и многое другое. Студенческий клуб «Достать ножи», который является частью Молодёжного центра, даёт возможность студентам заниматься на экспозиции музея по авторским курсам, принимать участие в тематических вечерах и праздниках в залах музея.</p>
+        <h2 style=" font-style:italic; font-size:2em;">Молодежь</h2>
+        <p style=" font-style:italic; font-size:1em;">Для молодёжи разработаны уникальные программы, включающие мастер-классы известных деятелей культуры и искусства, циклы лекций по истории и теории искусства и многое другое. Студенческий клуб «Достать ножи», который является частью Молодёжного центра, даёт возможность студентам заниматься на экспозиции музея по авторским курсам, принимать участие в тематических вечерах и праздниках в залах музея.</p>
         <p><a class="btn btn-default" href="{% url 'blog' %}">узнать больше &raquo;</a></p>
     </div>
 </div>
 {% load staticfiles %}
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" style=" width:350px; height:400px; margin-left:35%;">
 
     <ol class="carousel-indicators">
 
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
 
-        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="active" ></li>
 
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="active" ></li>
 
-        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="3" class="active" ></li>
 
     </ol>
 
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox"  >
 
-        <div class="item active">
+        <div class="item active" style="align-content:center;">
 
-            <img src="{% static 'app/content/1.svg'%} " alt="Первый слайд" class="img-responsive" />
-
-            <div class="carousel-caption" role="option">
-
-                <p>
-
-
-                    <a class="btn btn-default" href="{% url 'blog' %}">
-
-                        Узнать больше о нас
-
-                    </a>
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="item">
-
-            <img src="{% static 'app/content/2.svg'%}" alt="Второй слайд"  class="img-responsive" />
+            <img src="{% static 'app/content/1.svg'%} " alt="Первый слайд" class="img-responsive" style=" width:400px; height:400px;"/>
 
             <div class="carousel-caption" role="option">
 
@@ -94,7 +73,28 @@
 
         <div class="item">
 
-            <img src=" {% static 'app/content/3.svg'%} " alt="Третий слайд"  class="img-responsive" />
+            <img src="{% static 'app/content/2.svg'%}" alt="Второй слайд"  class="img-responsive" style=" width:400px; height:400px; flex: 0 0 auto;"/>
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+
+                    <a class="btn btn-default" href="{% url 'blog' %}">
+
+                        Узнать больше о нас
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src=" {% static 'app/content/3.svg'%} " alt="Третий слайд"  class="img-responsive" style=" width:400px; height:400px; flex: 0 0 auto;" />
 
             <div class="carousel-caption" role="option">
 

@@ -48,4 +48,21 @@ class Comment(models.Model):
         verbose_name_plural = "Комментарий к посту"
         ordering = ["-date"]
 
+class Orders(models.Model):
+    fio = models.CharField(max_length = 1000, verbose_name = 'ФИО')
+    email = models.CharField(max_length = 1000, verbose_name = "E-mail")
+    phone = models.CharField(max_length = 11, verbose_name = "Телефон")
+    date = models.CharField(max_length = 1000, verbose_name = 'Дата', null=True)
+    sum = models.IntegerField(verbose_name = 'Сумма', null=True);
+    tickets = models.TextField(verbose_name="Билеты", null=True);
+
+    def __str__(self):
+        return self.fio + "; На сумму " + str(self.sum);
+
+    class Meta:
+        db_table = 'Orders'
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
 admin.site.register(Blog)
+admin.site.register(Orders)

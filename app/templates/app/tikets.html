@@ -1,0 +1,86 @@
+{% extends "app/layout.html" %} {% block content %}
+<h1>Здесь вы можете приобрести билеты в музей на ближайшие даты</h1>
+<div style="padding-top: 25px">
+  {% for day in days %}
+
+  <button class="dbtn" id="date{{forloop.counter}}">{{ day.date }}</button>
+  {% endfor %}
+</div>
+
+<div>
+  <div class="tw">
+    <p class="p1">Категория</p>
+    <p class="p2">Цена, руб.</p>
+    <p class="p3">Количество</p>
+    <p class="p4">Сумма, руб.</p>
+  </div>
+  <div>
+    <div class="tw">
+      <p class="p1" id="tik1">Взрослый (без льгот)</p>
+      <p class="p2" id="price1">450</p>
+      <p class="p3">
+        <button class="tbtn" id="btnm1">-</button><span id="count1">0</span
+        ><button class="tbtn" id="btnp1">+</button>
+      </p>
+      <p class="p4"><span id="sum1">0</span></p>
+    </div>
+    <div class="tw">
+      <p class="p1" id="tik2">Многодетные семьи</p>
+      <p class="p2" id="price2">300</p>
+      <p class="p3">
+        <button class="tbtn" id="btnm2">-</button><span id="count2">0</span
+        ><button class="tbtn" id="btnp2">+</button>
+      </p>
+      <p class="p4"><span id="sum2">0</span></p>
+    </div>
+    <div class="tw">
+      <p class="p1" id="tik3">Студенты</p>
+      <p class="p2" id="price3">300</p>
+      <p class="p3">
+        <button class="tbtn" id="btnm3">-</button><span id="count3">0</span
+        ><button class="tbtn" id="btnp3">+</button>
+      </p>
+      <p class="p4"><span id="sum3">0</span></p>
+    </div>
+    <div class="tw">
+      <p class="p1" id="tik4">Пенсионеры</p>
+      <p class="p2" id="price4">300</p>
+      <p class="p3">
+        <button class="tbtn" id="btnm4">-</button><span id="count4">0</span
+        ><button class="tbtn" id="btnp4">+</button>
+      </p>
+      <p class="p4"><span id="sum4">0</span></p>
+    </div>
+    <div class="tw">
+      <p class="p1" id="tik5">Детский до(16 лет)</p>
+      <p class="p2" id="price5">0</p>
+      <p class="p3">
+        <button class="tbtn" id="btnm5">-</button><span id="count5">0</span
+        ><button class="tbtn" id="btnp5">+</button>
+      </p>
+      <p class="p4"><span id="sum5">0</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="fw">
+  <form method="POST" id="tickets_form">
+    {% csrf_token %}
+    <div class="fww">
+      <div class="left-part" style="font-style: italic;">
+        <p class="">ФИО</p>
+        <p class="">E-mail</p>
+        <p class="">Телефон</p>
+        <p class="">Дата</p>
+        <p class="">Сумма</p>
+        <p>Билеты</p>
+      </div>
+      <div class="right-part">
+        {{form.fio}} {{form.email}} {{form.phone}} {{form.date}} {{form.sum}} {{form.tickets}}
+      </div>
+    </div>
+    <button type="submit" id="submit_form">Оплатить</button>
+  </form>
+</div>
+
+{% endblock %}

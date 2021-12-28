@@ -5,6 +5,7 @@
 <div>
     <form method="post">
     {% csrf_token %}
+    <div class="feed">
     <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
     {{ form.name }}<br /><br />
     <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
@@ -15,6 +16,7 @@
     {{ form.agree }}<br /><br />
     <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
     {{ form.message }}<br /><br />
+    </div>
     <input type="submit" value="Отправить" />
     </form>
 </div>

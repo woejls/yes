@@ -1,0 +1,78 @@
+.tw {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px 0;
+}
+
+.fww {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.fww > .left-part > p {
+    margin: 10px;
+}
+
+.fww > .right-part {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.fww > .right-part > input {
+    margin: 3px;
+}
+
+.activeDate {
+    color: red;
+}
+
+.tbtn {
+    margin: 0 10px;
+    font-style: italic;
+}
+
+.p1 {
+    margin: 0px 10px;
+    width: 300px;
+    font-style: italic;
+}
+.p2 {
+    margin: 0px 10px;
+    width: 100px;
+    text-align: center;
+    font-style: italic;
+}
+
+
+.p3 {
+    margin: 0px 10px;
+    width: 100px;
+    text-align: center;
+    font-style: italic;
+}
+.p4 {
+    margin: 0px 10px;
+    width: 100px;
+    text-align: center;
+    font-style: italic;
+}
+
+
+.p5 {
+    margin: 0px 10px;
+    width: 150px;
+    text-align: center;
+    font-style: italic;
+}
+
+.p1 .p2 .p3 .p4 .p5 {
+    text-align: center;
+    font-style: italic;
+}
+
+.orderText{
+    font-size:1.2em;
+    color:red;
+    padding-left: 20px;
+}

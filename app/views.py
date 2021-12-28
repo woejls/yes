@@ -5,7 +5,7 @@ Definition of views.
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
-from datetime import datetime
+from datetime import datetime, timedelta
 from .forms import FeedbackForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -15,6 +15,8 @@ from .models import Comment
 from .forms import CommentForm
 from .models import Blog
 from .forms import BlogForm
+from .models import Orders
+from .forms import OrderForm
 
 def home(request):
     """Renders the home page."""
@@ -53,6 +55,61 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+def tikets(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    dates=[]
+    for i in range(7):
+        dates.append(datetime.now() + timedelta(i))
+
+    if request.method == "POST":
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            Orders.objects.create(fio=form.fio, email=form.email, phone=form.phone, date=form.date, sum=form.sum, tickets=form.tickets);
+            return redirect(tikets)
+
+    else:
+        form = OrderForm();
+
+    return render(
+        request,
+        'app/tikets.html',
+        {
+            'form':form,
+            'days':dates,
+            'year':datetime.now().year,
+        }
+    )
+
+
+def managerOrders(request):
+
+    qOrders = '''
+    select 
+    o.id,
+    o.fio as clientFio,
+    o.email as orderEmail,
+    o.sum as orderSum,
+    o.phone as orderPhone,
+    o.date as orderDate,
+    o.tickets as orderTickets
+    from Orders as o'''
+
+    orders = Orders.objects.raw(qOrders)
+
+
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/orders.html',
+        {
+            'orders': orders,
+            'title':'Заказы',
+            'year':datetime.now().year,
+        }
+    )
+
 def feedback(request):
     assert isinstance(request, HttpRequest)
     data = None
